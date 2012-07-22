@@ -1,0 +1,18 @@
+<?php
+// $Id: jifupload.install,v 1.1 2009/02/23 22:53:33 awolfey Exp $
+
+/**
+ * @file
+ * Install file for the jifupload module.
+ */
+
+/**
+ * Implementation of hook_install().
+ */
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function jifupload_uninstall() {
+   db_query("DELETE from {variable} WHERE name LIKE '%s%%'", 'jifupload_');
+}

@@ -1,0 +1,7 @@
+<?php 
+function og_panels_hide_tab_menu_alter(&$items){
+  $result = db_query("SELECT DISTINCT tab_num FROM {og_panels} ORDER BY tab_num ASC");
+  while ($tab = db_fetch_object($result)) {
+     $items['node/%/og-panel/'. $tab->tab_num]['type'] = MENU_CALLBACK;
+  }
+}

@@ -1,0 +1,15 @@
+/* $Id: CHANGELOG.txt,v 1.1.2.2.2.1 2009/04/02 04:48:59 mgn Exp $ */
+
+og_gradebook 6.x.2.x-dev, 2009-04-01
+----------------------
+* by MGN: Changed og_gradebook_gradebookapi_students() and og_gradebook_gradebookapi_teachers() to match changes in
+  gradebookapi 6.x.2.x.
+
+og_gradebook 6.x.1.x-dev, 2009-01-24
+----------------------
+by MGN: Modified access permission from 'access content' to 'access gradebook' to be consistent with gradebook-6.x.1.x-dev.
+by MGN: Set group context correctly for og_gradebook_page.
+
+og_gradebook 6.x.1.x-dev, 2009-01-04
+----------------------
+#350965 by MGN: Initial port of og_gradebook for Drupal 6.

@@ -1,0 +1,187 @@
+/* $Id: gradebook.css,v 1.3.6.1.2.7 2010/07/03 07:50:55 mgn Exp $ */
+
+/**
+ * @file
+ * CSS rules for formating the gradebook
+ */
+
+/**
+ *  This container surrounds the gradebook_page.
+ *  Adds scrollbars to keep table under control.
+ */
+
+#gradebook-container {
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+
+/**
+ *  Style the links above the gradebook grade page.
+ *  Each link is an item in an unordered list.
+ */
+
+#gradebook-grade-page-links {
+  background-color: #c0c0c0;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  font-size: 100%;
+  list-style-type: circle;
+}
+
+#gradebook-grade-page-links ul {
+  margin: 0;
+  padding: 0;
+}
+
+#gradebook-grade-page-links li {
+  display: inline;
+  padding-right: 10px;
+}
+
+/**
+ *  Rules to format the gradebook table 
+ */
+
+.gradebook {
+  width: 100%;
+  font-size: 80%;
+  border: 1px solid #ccc;
+}
+
+/**
+ *  Rules for formatting gradebook table header rows and columns
+ */
+
+.gradebook th,
+.gradebook .category,
+.gradebook .possible,
+.gradebook .date,
+.gradebook .title,
+.gradebook .name,
+.gradebook .edit-all,
+.gradebook .exempt-box {
+  border: 2px solid #ccc;
+  text-align: center;
+}
+
+.gradebook .select {
+  border: 2px solid #ccc;
+  text-align: center;
+}
+
+.gradebook .earned-possible {
+  border: 2px solid #ccc;
+  text-align: center;
+}
+
+.gradebook .note {
+  border: 2px solid #ccc;
+  text-align: left;
+}
+
+.gradebook .average {
+  border: 2px solid #ccc;
+  color: #FF0000;
+  text-align: center;
+}
+
+/**
+ * Rules for formating gradebook table grade entries (and legend).
+ */
+.gradebook .empty {
+  text-align: center;
+}
+
+.gradebook .grade,
+.gradebook-legend-item.grade {
+  text-align: center;
+  background-color: #00FF00;
+  list-style: none;
+  list-style-type: none;
+}
+
+.gradebook .term-grade {
+  text-align: center;
+  color: #FF0000;
+}
+
+/**
+ *  Rules to provide line through exempted grade
+ */
+
+.gradebook .exempt,
+.gradebook .exempt a,
+.gradebook-legend-item.exempt {
+  text-decoration: line-through;
+  color: #AA0000;
+}
+
+/**
+ *  Rules to format the extra fields added to assignment nodes.
+ */
+
+.gradebook-assignment-notice {
+  border:.75pt solid #317082;;
+  border-left-width: 5px;
+  vertical-align: top;
+  background: #e2ebed;
+  color: #027ac6;
+	 padding: 10px;
+	 margin-top: 20px;
+	 margin-bottom: 20px;
+	 margin-right: auto;
+	 margin-left: auto; 	
+  text-align: left;
+}
+
+.gradebook-assignment-notice ul.gradebook-assignment-category li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-weight: bold;
+}
+
+.gradebook-assignment-notice .gradebook-assignment-due {
+  color: #027ac6;
+}
+
+.gradebook-assignment-notice .gradebook-assignment-due-date {
+  color: #FF0000;
+}
+
+.gradebook-assignment-notice .gradebook-assignment-possible {
+  color: #027ac6;
+}
+
+.gradebook-assignment-notice .gradebook-assignment-possible-points {
+  color: #FF0000;
+}
+
+/**
+ *  Rules for the Gradebook Legend
+ */
+table td.gradebook-mini,
+table th.gradebook-mini,
+table.gradebook-mini {
+ 	padding:0 1px 0 0;
+ 	margin:0;
+ 	}
+table td.gradebook-mini a {
+ 	font-weight:normal;
+ 	}
+
+.gradebook-mini {
+ 	font-size:.7em;
+ 	width:32%;
+ 	vertical-align:top;
+ 	} 
+
+table.gradebook-legend {
+  background-color:#ccc;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+

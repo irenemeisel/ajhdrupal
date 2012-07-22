@@ -1,0 +1,18 @@
+<?php
+// $Id: privatemsg_bulkmail.install,v 1.1 2011/02/05 19:54:11 haagendazs Exp $
+
+/**
+ * @file
+ * Install routines for privatemsg bulkmail module.
+ */
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function privatemsg_bulkmail_uninstall() {
+  // Remove variables set by this module
+  variable_del('bulkmail_user_id');
+  variable_del('bulkmail_prevent_login');
+  variable_del('bulkmail_no_reply_message');
+  variable_del('bulkmail_batch_delete_limit');
+}

@@ -1,0 +1,147 @@
+<?php
+// $Id: privatemsg_bulkmail.module,v 1.1 2011/02/05 19:54:11 haagendazs Exp $
+
+/**
+ * @file
+ * Provides bulk mail functionality for the PrivateMSG module
+ */
+
+/**
+ * Implementation of hook_perm().
+ */
+function privatemsg_bulkmail_perm() {
+  return array(
+    'administer privatemsg bulk mail',
+    'send privatemsg bulk mail',
+  );
+}
+
+
+
+/**
+ * Implementation of hook_menu().
+ */
+function privatemsg_bulkmail_menu() {
+
+  $items = array();
+
+  $items['admin/settings/messages/bulkmail'] = array(
+    'title' => 'Bulk Mail',
+    'description' => 'Send PrivateMSG Bulkmail',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('privatemsg_bulkmail_admin_send_form'),
+    'access arguments' => array('send privatemsg bulk mail'),
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'privatemsg_bulkmail.admin.inc',
+    'file path' => drupal_get_path('module', 'privatemsg_bulkmail') .'/includes',
+  );
+
+  $items['admin/settings/messages/bulkmail/send'] = array(
+    'title' => 'Send Bulk Mail',
+    'description' => 'Send PrivateMSG Bulkmail',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('privatemsg_bulkmail_admin_send_form'),
+    'access arguments' => array('send privatemsg bulk mail'),
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'file' => 'privatemsg_bulkmail.admin.inc',
+    'file path' => drupal_get_path('module', 'privatemsg_bulkmail') .'/includes',
+    'weight' => 10,
+  );
+
+  $items['admin/settings/messages/bulkmail/settings'] = array(
+    'title'  => 'Configure Bulk Mail',
+    'description' => 'Configure PrivateMSG Bulkmail',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('privatemsg_bulkmail_admin_settings_form'),
+    'access arguments' => array('administer privatemsg bulk mail'),
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'privatemsg_bulkmail.admin.inc',
+    'file path' => drupal_get_path('module', 'privatemsg_bulkmail') .'/includes',
+    'weight' => 20,
+  );
+
+  return $items;
+
+}
+
+
+
+/**
+ * Implementation of hook_privatemsg_block_message().
+ *
+ * Prevent users from replying to a bulk mail message
+ */
+function privatemsg_bulkmail_privatemsg_block_message($author, $recipients) {
+
+  $bulkmail_user_id = variable_get('bulkmail_user_id', '');
+  if (!is_numeric($bulkmail_user_id)) {
+    return;
+  }
+
+  // Get the user id of the (about to be) recipient of the message.
+  // If the recipient user is the bulk mail user, prevent a message from being sent.
+  $uid_recipient = array_shift(array_keys($recipients));
+  if ($uid_recipient == $bulkmail_user_id) {
+    $blocked[] = array('uid' => $uid_recipient);
+    $status_message = variable_get('bulkmail_no_reply_message', '');
+    if ($status_message) {
+      drupal_set_message(t($status_message), 'status', FALSE);
+    }
+    return $blocked;
+  }
+
+}
+
+
+
+/**
+ * Implementation of hook_form_alter().
+ *
+ * Prevent bulk mail user from logging in (if configured
+ * as such in Bulk Mail admin settings).
+ */
+function privatemsg_bulkmail_form_alter(&$form, &$form_state, $form_id) {
+
+  switch ($form_id) {
+    case 'user_login':
+    case 'user_login_block':
+      if (variable_get('bulkmail_prevent_login', '')) {
+        // Before the Drupal login validation functions get called, make sure this user isn't the bulk mail user
+        array_unshift($form['#validate'], 'privatemsg_bulkmail_prevent_login_validate');
+      }
+      break;
+  }
+
+}
+
+
+
+/**
+ * Form validation function
+ *
+ * Make sure the bulk mail user can't login to the system.
+ */
+function privatemsg_bulkmail_prevent_login_validate($form, &$form_state) {
+
+  // Determine the user id of the user that attempted to log in
+  $uid = db_result(db_query("SELECT uid FROM {users} WHERE name = '%s'", $form_state['values']['name']));
+  if ($uid == variable_get('bulkmail_user_id', '')) {
+    form_set_error('name', t('This user is unable to login. Please contact the administrator of this site'));
+    return;
+  }
+
+}
+
+
+
+/**
+ * Implementation of privatemsg_message_presave_alter(&$message)
+ */
+function privatemsg_bulkmail_privatemsg_message_presave_alter(&$message) {
+
+  // We want to respect the filter format that gets selected for bulk mails.
+  if ($message['privatemsg_bulkmail_filter_format']) {
+    $message['format'] = $message['privatemsg_bulkmail_filter_format'];
+  }
+
+}

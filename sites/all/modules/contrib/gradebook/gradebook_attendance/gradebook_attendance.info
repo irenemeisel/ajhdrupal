@@ -1,0 +1,15 @@
+; $Id: gradebook_attendance.info,v 1.1.2.3 2010/08/20 02:59:27 mgn Exp $
+name = Gradebook Attendance
+description = Allows users to take attendance with their gradebooks.
+core = 6.x
+package = Gradebook
+dependencies[] = gradebook
+dependencies[] = gradebookapi
+
+
+; Information added by drupal.org packaging script on 2010-08-20
+version = "6.x-2.x-dev"
+core = "6.x"
+project = "gradebook"
+datestamp = "1282306137"
+

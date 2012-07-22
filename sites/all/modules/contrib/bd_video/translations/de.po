@@ -1,0 +1,88 @@
+# $Id: de.po,v 1.1.2.1 2010/03/12 21:20:03 jbrown Exp $
+#
+# German translation of Blue Droplet Video
+# Copyright 2010 Quiptime <quiptime@gmail.com>
+# Generated from files:
+#  bd_video.module,v 1.2.2.18 2009/12/07 21:44:50 jbrown
+#  bd_video.info,v 1.1.2.2 2009/05/06 21:45:01 jbrown
+#  bd_video.install,v 1.1.2.7 2009/12/09 00:25:08 jbrown
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2010-03-06 16:09+0100\n"
+"PO-Revision-Date: 2010-03-06 16:09+0100\n"
+"Last-Translator: Quiptime <quiptime@gmail.com>\n"
+"Language-Team: German <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+
+#: bd_video.module:185
+msgid "Transcoder"
+msgstr "Transcoder"
+
+#: bd_video.module:372
+msgid "The video is awaiting upload to bluedroplet.com."
+msgstr "Das Video steht zum Hochladen nach bluedroplet.com an."
+
+#: bd_video.module:376
+msgid "The video has been uploaded to bluedroplet.com for transcoding."
+msgstr "Das Video wurde für das Transcoding zu bluedroplet.com hochgeladen."
+
+#: bd_video.module:382
+msgid "Your credentials are invalid. Please enter your correct bluedroplet.com !credlink."
+msgstr "Ihre Anmeldeinformationen sind ungültig. Bitte verwenden Sie Ihren korrekten bluedroplet.com !credlink."
+
+#: bd_video.module:387
+msgid "There was insufficient credit at the time of uploading to transcode this video. Please purchase more credit at !bizlink."
+msgstr "Zum Zeitpunkt des Ladens war nicht ausreichend Kredit vorhanden um dieses Video zu transkodieren. Bitte kaufen Sie mehr Kredit bei !bizlink."
+
+#: bd_video.module:392;405
+msgid "Transcoding failed. Please try another video."
+msgstr "Transcoding gescheitert. Bitte versuchen Sie es ein anderes Video."
+
+#: bd_video.module:400
+msgid "Processing video... This may take a few minutes. Please !refreshlink."
+msgstr "Video-Verarbeitung ... Dies kann einige Zeit dauern. Bitte !refreshlink verwenden."
+
+#: bd_video.module:540
+msgid "Retranscode videos"
+msgstr "Retranscode Videos"
+
+#: bd_video.module:39
+msgid "access content"
+msgstr "Inhalt lesen"
+
+#: bd_video.module:50 bd_video.info:0
+msgid "Blue Droplet Video"
+msgstr "Blue Droplet Video"
+
+#: bd_video.module:51
+msgid "Site-wide Blue Droplet Video settings."
+msgstr "Seitenweite Blue Droplet Video Einstellungen."
+
+#: bd_video.module:60
+msgid "File autocomplete"
+msgstr "Datei Autovervollständigung"
+
+#: bd_video.install:15
+msgid "Blue Droplet Video requires the <a href=\"http://drupal.org/project/flowplayer\">Flowplayer</a> module, (<i>not</i> the Flowplayer module in SWF Tools)."
+msgstr "Blue Droplet Video benötigt das Modul <a href=\"http://drupal.org/project/flowplayer\">Flowplayer</a>, (<i>nicht</i> das Flowplayer-Modul der SWF Tools)."
+
+#: bd_video.install:20
+msgid "Incorrect module"
+msgstr "Falsches Modul"
+
+#: bd_video.info:0
+msgid "General purpose video module."
+msgstr "Allzweck-Video-Modul."
+
+#: bd_video.info:0
+msgid "Video"
+msgstr "Video"
+

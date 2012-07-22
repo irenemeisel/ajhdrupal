@@ -1,0 +1,151 @@
+/* $Id: local-sample.css 6555 2010-02-24 20:21:15Z chris $ */
+
+/****************************/
+/* LOCAL CSS                */
+/****************************/
+
+/* Put your custom CSS and CSS overrides in this file and  */
+/* rename it local.css.  By restricting your CSS changes   */
+/* to local.css, your changes will not be overwritten when */
+/* upgrading to a new version of this theme.  You can also */
+/* use a local-rtl.css file for the equivalent in RTL.     */
+
+/* Steps to activate local.css:                       */
+/* 1. Add your custom CSS to this file                */
+/* 2. Rename this file to local.css                   */
+/* 3. Clear cached data at admin/settings/performance */
+div#header-site-info.header-site-info.block a
+{
+	color: #88473C;
+	padding-top:20px;
+}
+
+div#header-group-wrapper.header-group-wrapper.full-width
+
+{
+	background-color:#D3A663;
+}
+div#nav-group-wrapper.nav-group-wrapper.full-width
+
+{
+	background-color: #88473C;
+	
+}
+
+div#footer-message-wrapper.footer-message-wrapper.full-width
+{
+	background-color: #88473C;
+	
+}
+	
+
+span#slogan
+{
+	font-size:24px;
+}
+
+
+
+.view-user-directory table.views-view-grid 
+
+{
+	background-color:#88473C;
+	width: 00px;
+	
+	}
+	
+	/* theming of login page */
+	
+.timetext
+{
+	font-weight:bold;
+	color:#847D49;
+	line-height:normal;
+	text-align: center;
+	font-size: 18px;
+}
+
+.introtext
+	{font-size: 18px;
+	color: #3A4F95;
+	line-height:normal;
+	text-align:center;
+	}
+	
+.leadership
+{font-size: 18px;
+	color: orange;
+	line-height:normal;
+	text-align:center;
+	}
+	
+	.rabbis
+	{font-size: 18px;
+	color: #7B4593;
+	line-height:normal;
+	text-align:center;
+	}
+	
+	.history
+	{	font-weight:bold;
+		font-size: 18px;
+	color: pink;
+	line-height:normal;
+	text-align:center;
+	}
+	
+	.judea
+	{
+		font-weight: bold;
+		font-size: 36px;
+		color: #88473C;
+	}
+	
+	#pid-user.not-front.not-logged-in.page-user.no-sidebars.layout-main.sidebars-split.font-size-12.grid-type-fluid.grid-width-16.fluid-95 .form-item 
+	
+	{
+		
+		padding-left:360px;
+	}
+	
+	#pid-user.not-front.not-logged-in.page-user.no-sidebars.layout-main.sidebars-split.font-size-12.grid-type-fluid.grid-width-16.fluid-95 input#edit-submit.form-submit
+	
+	{
+		background-color: orange;
+		position: relative;
+		left: 355px;
+		text-align: center;
+	
+	}
+	
+#pid-home.front.logged-in.page-home.no-sidebars.panels.layout-main.sidebars-split.font-size-12.grid-type-fluid.grid-width-16.fluid-95 div.t-edge
+{
+	background-color: #D3A663;;
+}
+
+#pid-home.front.logged-in.page-home.no-sidebars.panels.layout-main.sidebars-split.font-size-12.grid-type-fluid.grid-width-16.fluid-95 div.panel-pane.pane-node
+{
+	background-color: #D3A663;;
+}
+
+
+#pid-home.front.logged-in.page-home.no-sidebars.panels.layout-main.sidebars-split.font-size-12.grid-type-fluid.grid-width-16.fluid-95 div.r-edge
+{
+	background-color: #D3A663;;
+}
+
+#pid-home.front.logged-in.page-home.no-sidebars.panels.layout-main.sidebars-split.font-size-12.grid-type-fluid.grid-width-16.fluid-95 div.b-edge
+{
+	background-color: #D3A663;;
+}
+#pid-home.front.logged-in.page-home.no-sidebars.panels.layout-main.sidebars-split.font-size-12.grid-type-fluid.grid-width-16.fluid-95 fieldset.fieldgroup.group-promote-content.collapsible.collapsed a
+
+{
+	display:none;
+}
+
+
+/* hide tags tid label showing up on global content discussions page view                      */
+span.tags
+
+{visibility:hidden}

@@ -1,0 +1,352 @@
+<?php
+// $Id: og_gradebook.module,v 1.4.4.2.2.1 2009/04/02 04:48:59 mgn Exp $
+/**
+ * @file
+ * Provides a simple gradebook for each organic group
+ */
+
+/**
+ * Implementation of hook_help().
+ */
+function og_gradebook_help($path, $arg) {
+  switch ($path) {
+    case 'admin/modules#description':
+      return t('Provides a gradebook for each organic group. The group administrators are given teacher roles and all other members of the group are given student roles.');
+    case 'admin/help#og_gradebook':
+      $output = '<p>'. t('The og_gradebook module provides a gradebook for each organic group. Group administrators are given teacher roles and members of the group are given student roles. You can retroactively add gradebooks to already established groups through the <a href="@og-admin">og_gradebook  admin settings page</a>.', array('@og-admin' => url('admin/settings/og_gradebook'))) .'</p>';
+      $output .= '<p>'. t('Group gradebooks are accessed via the url <em>og_gradebook/gid</em>, where gid is the gradebook id, or through the link provided on the organic group detail block.') .'<p>';
+      $output .= '<p>'. t('For more information, see the <a href="@gradebook_help">Gradebook help pages.</a>', array('@gradebook_help' => url('admin/help/gradebook'))) .'</p>';
+      return $output;
+    case 'admin/settings/og_gradebook':
+      $output = '<p>'. t('Administration options for the organic group gradebooks. If this og_gradebooks was enabled after groups were established, you can retroactively add gradebooks to these groups by pressing the button below. Otherwise, you must visit each group node page to create the gradebook for these groups. New groups will be created with a gradebook.') .'</p>';
+      $output .= '<p>'. t('Group administrators are automatically assigned a teacher role, and all other members are automatically assigned student roles.') .'<p>';
+      $output .= '<p>'. t('Assignment types are configured site-wide at the <a href="@gradebookapi">Gradebook API configuration page</a>.', array('@gradebookapi' => url('admin/gradebook/gradebookapi'))) .'</p>';
+      return $output;
+    case 'og_gradebook/%':
+      $gradebook = gradebookapi_gradebook_load($arg[1]);
+      $output = '';
+      if (isset($gradebook)) {
+        $output = '<p>'. t('<strong>%gradebook_name:</strong> This gradebook can be sorted by clicking on any of the links in the first column. Click on the grade for an assignment', array('%gradebook_name' => $gradebook->name));
+        $output .= gradebookapi_is_teacher($gradebook) ? t(' to assign, edit or view the ') : t('to view your');
+        $output .= t('grade. Click on the title of an assignment to read the assignment.') .'</p>';
+      }
+      return $output;
+  }
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function og_gradebook_menu() {
+  $items = array();
+
+  $items['og_gradebook/%'] = array(
+    'title' => 'Group Gradebook',
+    'page callback' => 'og_gradebook_page',
+    'page arguments' => array(1),
+    'type' => MENU_CALLBACK,
+    'access callback' => 'user_access',
+    'access arguments' => array('access gradebook'),
+  );
+
+  $items['admin/settings/og_gradebook'] = array(
+    'title' => 'OG Gradebook',
+    'description' => 'Configure OG Gradebooks',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('og_gradebook_admin_settings'),
+    'access callback' => 'user_access',
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ *  Menu callback function to produce a group gradebook page
+ */
+
+function og_gradebook_page($tid) {
+  $gid = og_gradebook_get_group($tid);
+  $group = node_load($gid);
+  og_set_group_context($group);
+  $gradebook = gradebookapi_gradebook_load($tid);
+  return gradebook_gradebook_page($gradebook);
+}
+
+/**
+ *  Admin settings form
+ */
+
+function og_gradebook_admin_settings() {
+  $form = array();
+
+  drupal_set_title(t('OG Gradebook Configuration'));
+
+  $form['update'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Retroactively update old groups'),
+    '#description' => t('Pressing this button will create gradebooks for any groups that do not already have them.'),
+    '#collapsible' => TRUE,
+  );
+
+  $form['update']['button'] = array(
+    '#type' => 'submit',
+    '#value' => t('Update old groups'),
+    '#submit' => array('og_gradebook_settings_submit'),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Custom submit handler for group update
+ */
+function og_gradebook_settings_submit($form, &$form_state) {
+  og_gradebook_apply_to_all('insert');
+// $form_state['redirect'] = 'admin/settings';
+
+}
+
+/**
+ * Implementation of hook_nodeapi().
+ *
+ * @return NONE
+ */
+
+function og_gradebook_nodeapi(&$node, $op, $teaser = NULL, $page = NULL) {
+  switch ($op) {
+    case 'insert':
+      if (og_is_group_type($node->type)) {
+        $edit = array('name' => $node->title, 'description' => $node->og_description, 'vid' => gradebookapi_get_vid());
+        $status = taxonomy_save_term($edit);
+        db_query('INSERT INTO {og_gradebook} (tid, nid) VALUES (%d, %d)', $edit['tid'], $node->nid);
+      }
+      break;
+    case 'update':
+      if (og_is_group_type($node->type)) {
+        $result = db_query('SELECT tid FROM {og_gradebook} WHERE nid = %d', $node->nid);
+        if ($term = db_fetch_object($result)) {
+          $edit = array('tid' => $term->tid, 'name' => $node->title, 'description' => $node->og_description, 'vid' => gradebookapi_get_vid());
+          $status = taxonomy_save_term($edit);
+        }
+        else {
+          // We hit a group that doesn't already have a gradebook. Pretend this is an insert.
+          return og_gradebook_nodeapi($node, 'insert', $teaser);
+        }
+      }
+      break;
+    case 'delete':
+      // Delete existing terms for this og
+      if (og_is_group_type($node->type)) {
+        // TODO: delete grades, etc
+        $result = db_query('SELECT tid FROM {og_gradebook} WHERE nid = %d', $node->nid);
+        while ($term = db_fetch_object($result)) {
+          taxonomy_del_term($term->tid);
+        }
+        db_query('DELETE FROM {og_gradebook} WHERE nid = %d', $node->nid);
+      }
+      break;
+  }
+}
+
+function og_gradebook_get_gradebook($group_id) {
+  // Grab most recent term created for group; this will be the gradebook id
+  return db_result(db_query_range('SELECT tid FROM {og_gradebook} WHERE nid = %d ORDER BY tid DESC', $group_id, 0, 1));
+}
+
+function og_gradebook_get_group($gradebook_id) {
+  // Grab most recent term created for group; this will be the group id
+  return db_result(db_query_range('SELECT nid FROM {og_gradebook} WHERE tid = %d ORDER BY nid DESC', $gradebook_id, 0, 1));
+}
+
+/**
+ * Implementation of hook_og_create_links().
+ */
+function og_gradebook_og_create_links($group) {
+  $links = array();
+
+  // Get group's gradebook
+  $gradebook  = og_gradebook_get_gradebook($group->nid);
+
+  if ($gradebook) {
+    $links[] = l(t('Gradebook'), 'og_gradebook/'. $gradebook, array('title' => t('View group gradebook.')));
+  }
+
+  return $links;
+}
+
+/**
+ * Implementation of hook_form_alter().
+ *
+ * @return NONE
+ */
+
+function og_gradebook_form_alter(&$form, $form_state, $form_id) {
+  // TODO: if non-group assignment is put in to a group, assign to group. same for the opposite.
+  // Auto-select group's gradebook
+  if (isset($form['type']) && $form['type']['#value'] .'_node_form' == $form_id) {
+    $node = $form['#node'];
+    $types = gradebookapi_get_assignment_types();
+
+    // are we an assignment type?
+    if (!empty($types)) {
+      if (in_array($node->type, $types)) {
+        $group = og_get_group_context();
+
+        if ($group->nid) {
+          // build the gradebook categories menu so the teacher can select what category this assignment goes into.
+          $options = array();
+          $vid =  gradebookapi_get_vid();
+          //$root = og_gradebook_get_gradebook($group->nid);
+          $root = 0;
+          $tree = taxonomy_get_tree($vid, $root);
+          $options[$root] = '<'. t('root') .'>';
+          foreach ($tree as $term) {
+            $options[$term->tid] = str_repeat('--', $term->depth) . $term->name;
+          }
+
+          // MGN:  Not sure what this is supposed to do - looks like we are determining
+          //       the number of taxonomy vocabularies that exists within the form...
+
+          $vcount = 0;
+          foreach ($form['taxonomy'] as $key => $value) {
+            if (is_int($key)) {
+              ++$vcount;
+            }
+          }
+
+          // MGN: when is this set, and why does it need to be unset here?
+          if (($vcount <= 1) && (count($options)<=1)) {
+            unset($form['taxonomy']['#type']);
+          }
+
+          if (count($options)>1) {
+            $form['taxonomy'][$vid]['#options'] = $options;
+
+            // make sure default is valid
+            $default = $form['taxonomy'][$vid]['#default_value'];
+            $form['taxonomy'][$vid]['#default_value'] = array();
+            foreach ($default as $key => $tid) {
+              if (in_array($tid, array_keys($options))) {
+                $form['taxonomy'][$vid]['#default_value'][] = $tid;
+              }
+            }
+            if (count($form['taxonomy'][$vid]['#default_value']) <= 0) {
+              $form['taxonomy'][$vid]['#default_value'][] = $root;
+            }
+          }
+          else {
+            $form['taxonomy'][$vid] = array(
+              '#type' => 'hidden',
+              '#value' => $root,
+              '#prefix' => '<em>'. t('No <a href="@link">gradebook categories</a> have been created, so this assignment will be placed at the top level of the gradebook.', array('@link' => url('gradebook/'. $root .'/catlist'))) .'</em>',
+            );  // MGN: $root was $term - but this seemed wrong...also added a help for teacher
+          }
+        }
+      }
+    }
+  }
+}
+
+
+function og_gradebook_apply_to_all($op) {
+
+  switch ($op) {
+    case 'insert':
+      $counter = 0;
+      // Obtain list of all groups
+      $result = db_query('SELECT og.nid, n.title, n.type FROM {og} og INNER JOIN {node} n on og.nid = n.nid');
+      while ($group = db_fetch_object($result)) {
+        // See if terms are found for this group
+        if (!db_result(db_query('SELECT * FROM {og_gradebook} ogt WHERE ogt.nid = %d', $group->nid))) {
+          // If so, fake a nodeapi operation
+          og_gradebook_nodeapi($group, $op);
+          $counter++;
+        }
+      }
+      drupal_set_message(t('%num groups had gradebooks created.', array('%num' => $counter)));
+      break;
+    case 'delete':
+      $counter = 0;
+      // Obtain list of all groups
+      $result = db_query('SELECT og.nid, n.title, n.type FROM {og} og INNER JOIN {node} n on og.nid = n.nid');
+      while ($group = db_fetch_object($result)) {
+        // See if terms are found for this group
+        if (db_result(db_query('SELECT * FROM {og_gradebook} ogt WHERE ogt.nid = %d', $group->nid))) {
+          // If so, fake a nodeapi operation
+          og_gradebook_nodeapi($group, $op);
+          $counter++;
+        }
+      }
+      drupal_set_message(t('%num groups had gradebooks deleted.', array('%num' => $counter)));
+      break;
+    default:
+  }
+}
+
+/**
+ * Implementation of hook_gradebookapi_students().
+ *
+ * @param $gradebook
+ *   The gradebook object
+ * @return array
+ *   An array with keys 'uid', containing a list of student ids and 'name', containing a list of student names
+ *   This was changed for gradebookapi 6.x.2.x
+ */
+
+function og_gradebook_gradebookapi_students($gradebook, $students = array('uid' => array(), 'name' => array())) {
+
+  if ($group_id = og_gradebook_get_group($gradebook->tid)) {
+    $sql = "SELECT u.uid, u.name FROM {og_uid} ou INNER JOIN {users} u ON ou.uid = u.uid WHERE ou.nid = %d AND u.status <> 0 AND ou.is_active <> 0 AND ou.is_admin = 0";
+    $result = db_query($sql, $group_id);
+    while ($user = db_fetch_object($result)) {
+      $students['uid'][$user->uid] = $user->uid;
+      $students['name'][$user->uid] = $user->name;
+    }
+  }
+  return $students;
+}
+
+/**
+ * Implementation of hook_gradebookapi_teachers().
+ *
+ * @param $gradebook
+ *   The gradebook object
+ * @return array
+ *   An array with keys 'uid', containing a list of teacher ids and 'name', containing a list of teacher names
+ *   This was changed for gradebookapi 6.x.2.x
+ */
+
+function og_gradebook_gradebookapi_teachers($gradebook,  $teachers = array('uid' => array(), 'name' => array())) {
+
+  if ($group_id = og_gradebook_get_group($gradebook->tid)) {
+    $sql = "SELECT u.uid, u.name FROM {og_uid} ou INNER JOIN {users} u ON ou.uid = u.uid WHERE ou.nid = %d AND u.status > 0 AND ou.is_active > 0 AND ou.is_admin > 0";
+    $result = db_query($sql, $group_id);
+    while ($user = db_fetch_object($result)) {
+      $teachers['uid'][$user->uid] = $user->uid;
+      $teachers['name'][$user->uid] = $user->name;
+    }
+  }
+  return $teachers;
+}
+
+/**
+ * Implementation of hook_init().
+ *   similiar to og_init
+ */
+
+function og_gradebook_init() {
+  if (arg(0) == 'gradebook') {
+    if (is_numeric(arg(1))) {
+      $gradebook = gradebookapi_gradebook_load(arg(1));
+
+      $group_id = og_gradebook_get_group($gradebook->tid);
+      $group_node = og_set_theme($group_id);
+
+      // set group context and language
+      og_set_group_context($group_node);
+      og_set_language($node);
+    }
+  }
+}

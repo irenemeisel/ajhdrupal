@@ -1,0 +1,16 @@
+;$Id: views_arguments_extras.info,v 1.1.2.1 2010/03/15 20:39:24 e2thex Exp $
+name = "Views Arguments Extras"
+description = "Adds extra to Views around arguments"
+core = "6.x"
+dependencies[] = views
+package = "Views"
+
+
+
+
+; Information added by drupal.org packaging script on 2010-04-15
+version = "6.x-1.0-alpha4"
+core = "6.x"
+project = "views_arguments_extras"
+datestamp = "1271304014"
+

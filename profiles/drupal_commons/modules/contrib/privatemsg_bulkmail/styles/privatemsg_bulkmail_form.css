@@ -1,0 +1,11 @@
+#privatemsg-bulkmail-admin-send-form #edit-role-include-wrapper,
+#privatemsg-bulkmail-admin-send-form #edit-role-exclude-wrapper{
+float:left;
+margin-right:3%;
+margin-top:0;
+width:20%;
+}
+
+#privatemsg-bulkmail-admin-send-form #edit-join-date-wrapper{
+clear:left;
+}

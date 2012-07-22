@@ -1,0 +1,21 @@
+; $Id: og_gradebook.info,v 1.1.4.1 2009/01/24 03:49:04 mgn Exp $
+
+name = OG Gradebook
+description = "Provides a simple gradebook per Organic Group."
+package = Organic groups
+dependencies[] = gradebook
+dependencies[] = gradebookapi
+dependencies[] = og
+dependencies[] = taxonomy
+core = 6.x
+
+; Information added by drupal.org packaging script on 2007-04-07
+version = "6.x-1.x-dev"
+project = "og_gradebook"
+
+; Information added by drupal.org packaging script on 2010-07-11
+version = "6.x-2.x-dev"
+core = "6.x"
+project = "og_gradebook"
+datestamp = "1278835114"
+

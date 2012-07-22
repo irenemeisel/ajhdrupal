@@ -1,0 +1,415 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.0
+Implementation-Title: JUpload2
+Implementation-Version: 4.3.2
+Implementation-Company: http://jupload.sourceforge.net/
+Built-By: etienne_sf
+Created-By: 11.2-b01 (Sun Microsystems Inc.)
+Built-Date: 2009-May-05 11:13
+
+Name: wjhk/jupload2/lang/lang_fr.properties
+SHA1-Digest: Iblt6iYRFxPpZFoVgf+LyDcpe+Y=
+
+Name: images/rotateRight.gif
+SHA1-Digest: FjA9Ew03XA8M7q3NHvfgN1C+tjA=
+
+Name: wjhk/jupload2/JavascriptHandler.class
+SHA1-Digest: G4Ehk2tX8Fw1WSChAW5Nn/asesI=
+
+Name: wjhk/jupload2/lang/test.back/lang_sk.properties
+SHA1-Digest: a1SityAhqnJ5u8UbUG3EdEyRYlo=
+
+Name: wjhk/jupload2/gui/filepanel/FilePanelTableImp.class
+SHA1-Digest: Bhguea/oZApEwOR4w5yWkzsGQiM=
+
+Name: wjhk/jupload2/filedata/PictureFileData.class
+SHA1-Digest: SLSSPOxgZlJ8hujaqC19HvmdTk0=
+
+Name: wjhk/jupload2/lang/lang_no.properties
+SHA1-Digest: qY7HAgvolewyXbaGR5NBWkr3RcA=
+
+Name: images/recycle.gif
+SHA1-Digest: 3w7F47mp9Net7MNeeQPz7YKxIoI=
+
+Name: wjhk/jupload2/lang/lang_sk.properties
+SHA1-Digest: 4Vvv1zPzO81Ey8S+qk9K1yzrun0=
+
+Name: wjhk/jupload2/lang/lang_es.properties
+SHA1-Digest: exRKPwjiUsHgy/NjUO3pA6Dxbm0=
+
+Name: wjhk/jupload2/upload/helper/HttpConnect.class
+SHA1-Digest: fId+Qdyb9qTZVJywz9mGojnE06Q=
+
+Name: wjhk/jupload2/gui/image/PictureDialog.class
+SHA1-Digest: XiRqzGSzVyGnXteTr8qHajc5t0g=
+
+Name: wjhk/jupload2/policies/DefaultUploadPolicy.class
+SHA1-Digest: 2LlKNmG0WwKx+S+XxHNjDRwn5/Y=
+
+Name: wjhk/jupload2/gui/filepanel/NameRenderer.class
+SHA1-Digest: Poi6jg2hPaKvcQhw3K/PjIX8iqY=
+
+Name: wjhk/jupload2/lang/test.back/lang_pt_BR.properties
+SHA1-Digest: tmtevOOIaUnG2HONuwV0BE/RsaA=
+
+Name: wjhk/jupload2/lang/lang_se.properties
+SHA1-Digest: yoQIJVIfbnStum5a+Taf4H5f8UY=
+
+Name: wjhk/jupload2/exception/JUploadException.class
+SHA1-Digest: Pzuq2lvua2ml/enxwoyC0kymdaw=
+
+Name: wjhk/jupload2/lang/test.back/lang_en_US.properties
+SHA1-Digest: Q0Oh0ew4dJy9v6EbfzmLFoIfMXE=
+
+Name: wjhk/jupload2/lang/test.back/lang_es.properties
+SHA1-Digest: ow7DPy26711LLK4XEmxCiTVny0g=
+
+Name: wjhk/jupload2/gui/filepanel/SortHeaderRenderer.class
+SHA1-Digest: P8t7fdxZBRbkTrrx1zUcoKq0ppI=
+
+Name: content
+todo: Add more info here.
+
+Name: wjhk/jupload2/lang/test.back/lang_dk.properties
+SHA1-Digest: VVDy7Rd96OmVqW5LftmTlLQx4Hc=
+
+Name: wjhk/jupload2/gui/image/JUploadImagePreview.class
+SHA1-Digest: 9ebI2uv8Cppy2ho4Sv2h/eim1HQ=
+
+Name: wjhk/jupload2/gui/filepanel/FilePanel.class
+SHA1-Digest: Vml9CI/7a3XJll58zxqF/s5pwvs=
+
+Name: wjhk/jupload2/policies/NoAlertUploadPolicy.class
+SHA1-Digest: otJ7ks7DfRwSFwY/WA22/P2DUHo=
+
+Name: wjhk/jupload2/lang/lang_it.properties
+SHA1-Digest: ixm23taFCvqOeX0R26fzja2sssA=
+
+Name: wjhk/jupload2/lang/test.back/lang_ru.properties
+SHA1-Digest: ZURreqG6NPX9c9bYY0sA3lX/6wE=
+
+Name: wjhk/jupload2/lang/test.back/lang_cz.properties
+SHA1-Digest: lmUTo7nVJJtNygV+J6iHqR1Mg/Q=
+
+Name: wjhk/jupload2/policies/UploadPolicyFactory.class
+SHA1-Digest: LIX/FdFlT8W7Idap4OnKQ3Djha0=
+
+Name: wjhk/jupload2/gui/image/LoadImageThread.class
+SHA1-Digest: 74oCW1PWZ0RkMzAwZ0Pjqjn/25Q=
+
+Name: wjhk/jupload2/lang/lang_pt.properties
+SHA1-Digest: 3JYwIrtOpuLfkrdyGBxd7llj4so=
+
+Name: wjhk/jupload2/lang/lang_de.properties
+SHA1-Digest: nBFs3B82XYApaKslhLFjOvGibIo=
+
+Name: wjhk/jupload2/upload/DefaultFileUploadThread.class
+SHA1-Digest: Pf5ZPMoKPcQx0P1S2BYYV8EGkFM=
+
+Name: wjhk/jupload2/upload/helper/CookieJar$Cookie.class
+SHA1-Digest: BDx7DQdYadql1cUnWm1XEXBxhFc=
+
+Name: wjhk/jupload2/lang/lang_ar_SA.properties
+SHA1-Digest: jL6dmDMfE6Oxt8SClZ8K3OT73Sg=
+
+Name: wjhk/jupload2/EmptyApplet.class
+SHA1-Digest: 8MYg9LjwVHvXL/vPLmJyaZO/vME=
+
+Name: wjhk/jupload2/lang/test.back/lang_de.properties
+SHA1-Digest: IZviRi+8jeZjmTzU9wBIK81fQ2Y=
+
+Name: wjhk/jupload2/lang/lang_ru.properties
+SHA1-Digest: unjljaA12mSiBhPIsluXWkB2G0o=
+
+Name: wjhk/jupload2/lang/lang_pt_BR.properties
+SHA1-Digest: b61gTYs3EpGcuG+4VClsHNG84hI=
+
+Name: wjhk/jupload2/upload/helper/HTTPConnectionHelper.class
+SHA1-Digest: e7iaE4nIBiSZ/NBR+wfwA0Voltk=
+
+Name: wjhk/jupload2/lang/lang_en_US.properties
+SHA1-Digest: 03QGzM9Eab7WHbEZMfl3+id/+2Q=
+
+Name: wjhk/jupload2/exception/JUploadIOException.class
+SHA1-Digest: YhTJ4/92d/j2GwIlFvk8eTdfukM=
+
+Name: wjhk/jupload2/upload/FileUploadManagerThread.class
+SHA1-Digest: aHJ019QNeA0Sjb2Qb4PpKSMzvcI=
+
+Name: wjhk/jupload2/exception/JUploadExceptionTooBigFile.class
+SHA1-Digest: MoroKIB402NPsOAGueFA7vpnL00=
+
+Name: wjhk/jupload2/gui/filepanel/SortArrowIcon.class
+SHA1-Digest: nv72f64faR1QDtXTUAsKZVI+Crk=
+
+Name: wjhk/jupload2/filedata/FileData.class
+SHA1-Digest: m/UR2ciiFFCZh5hL/yiup0efmpg=
+
+Name: wjhk/jupload2/lang/test.back/lang_si.properties
+SHA1-Digest: 4o+iGoaSs/B0mhtKehOBui+otQs=
+
+Name: wjhk/jupload2/JUploadApplet.class
+SHA1-Digest: qWaNZctwFQyjoaosYEGDJfGEGgc=
+
+Name: wjhk/jupload2/lang/lang_ar.properties
+SHA1-Digest: ds5R+pTz/ghSWdsw6/NxRe7H/vM=
+
+Name: wjhk/jupload2/upload/helper/InteractiveTrustManager.class
+SHA1-Digest: IdvC8xIjSIaREKJMYk0CP50BTaw=
+
+Name: wjhk/jupload2/gui/IconWorker.class
+SHA1-Digest: V4/2xLWXMjaRDlOgLfvXwJNSAiQ=
+
+Name: wjhk/jupload2/gui/filepanel/ColumnComparator.class
+SHA1-Digest: BfyGDPt4k2idKIeey5/XXWROeFQ=
+
+Name: wjhk/jupload2/policies/CustomizedNbFilesPerRequestUploadPolicy.c
+ lass
+SHA1-Digest: TSTXZEKBC6y0B9cT3LuyFhx3ifk=
+
+Name: wjhk/jupload2/policies/FileByFileUploadPolicy.class
+SHA1-Digest: Uofn7t+7TFXRKDUOxmacQ86OeTw=
+
+Name: wjhk/jupload2/gui/filepanel/DateRenderer.class
+SHA1-Digest: jxg1+BpSra391SVhSo6VJSJfcwc=
+
+Name: wjhk/jupload2/lang/lang_ar-SA.properties
+SHA1-Digest: 0iOqtbS4AEraeMZ1sgbQIpQ9JOc=
+
+Name: wjhk/jupload2/lang/test.back/lang_hr.properties
+SHA1-Digest: 4Cz3fA0GotCbyyh/a9iMkEQfIlM=
+
+Name: wjhk/jupload2/lang/lang_us.properties
+SHA1-Digest: EcUHRawnmU3EpqZ1+FPjhlp601A=
+
+Name: wjhk/jupload2/lang/lang_ja.properties
+SHA1-Digest: YfgoUFGvlu04EIqkwxZ5AeGepvE=
+
+Name: wjhk/jupload2/gui/JUploadTransferHandler.class
+SHA1-Digest: Vd72maLt+PiEpu49VQwSLT2oasY=
+
+Name: wjhk/jupload2/upload/helper/ByteArrayEncoder.class
+SHA1-Digest: JJR5pf1CHaqpx6mygnGO+28Fg3o=
+
+Name: wjhk/jupload2/lang/lang_si.properties
+SHA1-Digest: hc839KPdFYytpzZUv6jjWKyAa7A=
+
+Name: wjhk/jupload2/lang/lang_dk.properties
+SHA1-Digest: +/2UBfdLZTYCW0OoBmKP8PUNfc4=
+
+Name: wjhk/jupload2/gui/JUploadDebugPopupMenu.class
+SHA1-Digest: lX5Ug/OJWHoYkt4IxHDViTeMcQ4=
+
+Name: wjhk/jupload2/upload/FileUploadThreadFTP.class
+SHA1-Digest: UDwQqrIJCnD0YXAZtxE8tYHICNA=
+
+Name: conf/svn.properties
+SHA1-Digest: jKjs2vscS0aCzFkphUJ0bTzI2uE=
+
+Name: wjhk/jupload2/gui/JUploadTextArea.class
+SHA1-Digest: 0Hi5otudsbtL/HZmacwBtGzny1Q=
+
+Name: wjhk/jupload2/lang/test.back/lang_pt.properties
+SHA1-Digest: tmtevOOIaUnG2HONuwV0BE/RsaA=
+
+Name: wjhk/jupload2/gui/filepanel/FilePanelDataModel2.class
+SHA1-Digest: rqXnYdrbbQeRSgoUMctJK0Lzvmo=
+
+Name: wjhk/jupload2/lang/test.back/lang_no.properties
+SHA1-Digest: BIWnk6b0onosUXC2oHqvN4x1kEg=
+
+Name: wjhk/jupload2/upload/helper/HTTPInputStreamReader.class
+SHA1-Digest: c9pHvOrYeLCdLjI1tOAiwCeofNI=
+
+Name: wjhk/jupload2/lang/test.back/lang_ar-SA.properties
+SHA1-Digest: 7GK9NvFB779bXMrFqDPc7R2eL44=
+
+Name: wjhk/jupload2/filedata/AudioFileData.class
+SHA1-Digest: m67s6hCUSXL/MHKWNIBAnvAOzsU=
+
+Name: wjhk/jupload2/upload/FileUploadThreadHTTP.class
+SHA1-Digest: BXarCvHRRLcw2NT9iM62zjiSgeE=
+
+Name: conf/mimetypes.properties
+SHA1-Digest: 1YwIT4jFC1Sd1EndXMoqHASQOAg=
+
+Name: wjhk/jupload2/policies/CoppermineUploadPolicy.class
+SHA1-Digest: ArzBjMkG0bGVD54OKtN85kbkoZ8=
+
+Name: wjhk/jupload2/lang/test.back/lang_ja.properties
+SHA1-Digest: ZX0LZhMgMJFfLBEBddmubq4rpv8=
+
+Name: wjhk/jupload2/policies/DefaultUploadPolicy$1.class
+SHA1-Digest: ft8NsXS+gZOc3+VS2gI+I6wub5c=
+
+Name: wjhk/jupload2/gui/DnDListener.class
+SHA1-Digest: e6DS3BZIp+8vIBrYHwDk2EcWZrc=
+
+Name: wjhk/jupload2/upload/helper/ByteArrayEncoderHTTP.class
+SHA1-Digest: myUEKmnDscZI7w/ScgeG7GEa8FM=
+
+Name: wjhk/jupload2/lang/test.back/lang.properties
+SHA1-Digest: 7a60FiuAOsB3n+PpWhBpoR+RScM=
+
+Name: wjhk/jupload2/lang/test.back/lang_il.properties
+SHA1-Digest: 7RNaSbHxNXHgNBYaAU/EQH7kgQs=
+
+Name: wjhk/jupload2/lang/lang_cz.properties
+SHA1-Digest: 5AFEURwJ8QX/wc+ic3O/lLZucP0=
+
+Name: wjhk/jupload2/lang/lang_en.properties
+SHA1-Digest: kmX2UPGf8alQYy5/dFM3sKjw7aE=
+
+Name: wjhk/jupload2/filedata/helper/ImageHelper.class
+SHA1-Digest: 053SspC9j/8J+9v0zEhAbWJ49Os=
+
+Name: wjhk/jupload2/lang/lang_hr.properties
+SHA1-Digest: 0XpW5mQZzprYP9o1Djk1TKbvnpg=
+
+Name: wjhk/jupload2/lang/lang_hu.properties
+SHA1-Digest: +Ndmd2zXUyLYwFDRLmlGI/0HVUI=
+
+Name: wjhk/jupload2/lang/test.back/lang_it.properties
+SHA1-Digest: I5y7vpS6yuojqSqXYcvxmWwPGW0=
+
+Name: images/cross.gif
+SHA1-Digest: oPsRDoqO3SsBLrp5VlJ+p9xCLOY=
+
+Name: wjhk/jupload2/gui/JUploadTextArea$DisplayOneMessageThread.class
+SHA1-Digest: KU8+vZZ4r5uGbbaBplrQeGI7IaA=
+
+Name: wjhk/jupload2/lang/test.back/lang_tr.properties
+SHA1-Digest: HTJJruRCkhckFff8SCdZkBJ8GcI=
+
+Name: wjhk/jupload2/exception/JUploadInterrupted.class
+SHA1-Digest: pmD8hHANCuOPS+9AkE/BqgYDGdo=
+
+Name: wjhk/jupload2/gui/DebugDialog.class
+SHA1-Digest: yuURELf8mnmuRnU9d/tlWmYomeY=
+
+Name: wjhk/jupload2/gui/JUploadFileFilter.class
+SHA1-Digest: 1k9PC/d/jKCWFw3VEIBIlewTPYw=
+
+Name: wjhk/jupload2/lang/lang_pl.properties
+SHA1-Digest: 42jTT9NUHgGPZfx8iw44t8Xi9RY=
+
+Name: wjhk/jupload2/gui/JUploadFileView.class
+SHA1-Digest: s8tmbLUoi8IcKcnAalWXd9tq9FU=
+
+Name: wjhk/jupload2/JUploadApplet$Callback.class
+SHA1-Digest: f4uZNVJ7djIVQEL1B9viCMjwKGs=
+
+Name: wjhk/jupload2/lang/test.back/lang_ar.properties
+SHA1-Digest: 7GK9NvFB779bXMrFqDPc7R2eL44=
+
+Name: wjhk/jupload2/gui/JUploadMainPopupMenu.class
+SHA1-Digest: zlDNWIjrKIGdeY+SfB32sK/UeDE=
+
+Name: wjhk/jupload2/policies/PictureUploadPolicy.class
+SHA1-Digest: xx6Bdld0mLkb6hrsX1lLHXeZPG0=
+
+Name: wjhk/jupload2/lang/test.back/lang_nl.properties
+SHA1-Digest: 4kqKjfeoWDuMMUDvUe9h2/JWyiE=
+
+Name: wjhk/jupload2/lang/lang_il.properties
+SHA1-Digest: pQaE9z+jYox73RufrwsmQHwcP/Q=
+
+Name: wjhk/jupload2/upload/FileUploadThread.class
+SHA1-Digest: hwoUR17I/zeYKt+MLA1ILR/Vw0Y=
+
+Name: wjhk/jupload2/lang/test.back/lang_hu.properties
+SHA1-Digest: v2huc1BVMZaYZLLsNBeQcUWnPoI=
+
+Name: wjhk/jupload2/lang/test.back/lang_eo.properties
+SHA1-Digest: zgwNkf0RfrxbIi5UKkoIlzVNlxQ=
+
+Name: wjhk/jupload2/lang/lang_tr.properties
+SHA1-Digest: SIvNxK7JoqIb/5hDD8aoGXjePys=
+
+Name: wjhk/jupload2/lang/test.back/lang_fr.properties
+SHA1-Digest: 7a60FiuAOsB3n+PpWhBpoR+RScM=
+
+Name: wjhk/jupload2/gui/JUploadFileChooser.class
+SHA1-Digest: /vxY1NH2/EAaQDlQDoL2WUYdcUc=
+
+Name: wjhk/jupload2/upload/UploadFileData.class
+SHA1-Digest: hbWzOfwEAJWAvXqIlSHREXVAEmo=
+
+Name: wjhk/jupload2/gui/image/DialogPicturePanel.class
+SHA1-Digest: /1BLO+ZLUZ8HeXaBCffdqBovBRk=
+
+Name: wjhk/jupload2/lang/test.back/lang_zh.properties
+SHA1-Digest: 50vOLmHzXdHhoh0s6hQ/ZAdxlsY=
+
+Name: wjhk/jupload2/exception/JUploadExceptionUploadFailed.class
+SHA1-Digest: R5dN9/T3Iad9Rr3bWV/PQIjhX/A=
+
+Name: wjhk/jupload2/filedata/helper/ImageReaderWriterHelper.class
+SHA1-Digest: MGB3pLdB/QlAiJ9EcJ5xsANrr7w=
+
+Name: wjhk/jupload2/lang/lang_br.properties
+SHA1-Digest: 9MwudJM0Jzttu52CxLGwczHx+6U=
+
+Name: wjhk/jupload2/lang/test.back/lang_en.properties
+SHA1-Digest: OCzqUzLuUKhlj2/D4yNMKt0KetM=
+
+Name: wjhk/jupload2/lang/lang_zh.properties
+SHA1-Digest: ac76W3dxEaHgXNVAgZPKiwPit9s=
+
+Name: wjhk/jupload2/lang/lang.properties
+SHA1-Digest: a5ffI8I9D8c+Dk5ms1Fe0GzWqdQ=
+
+Name: images/rotateLeft.gif
+SHA1-Digest: Og2O3qg2Q/crKm1eFPDOOpaYf/c=
+
+Name: wjhk/jupload2/lang/lang_zh_TW.properties
+SHA1-Digest: ac76W3dxEaHgXNVAgZPKiwPit9s=
+
+Name: wjhk/jupload2/lang/test.back/lang_pl.properties
+SHA1-Digest: pFOvjv8CGjmH2Gb6CkVcDN/+TUo=
+
+Name: wjhk/jupload2/policies/UploadPolicy.class
+SHA1-Digest: UNjPiBZrwWw9Y5IO8YtiRCMYDz8=
+
+Name: wjhk/jupload2/lang/lang_eo.properties
+SHA1-Digest: KK32tGc5IPzDMzsVJVZAHcCkGyo=
+
+Name: images/explorer.gif
+SHA1-Digest: ol68wtsRkZtElvwh+sxoP9pwIhc=
+
+Name: wjhk/jupload2/upload/helper/CookieJar.class
+SHA1-Digest: IC4Ve5PjYJIldok9eW8NBa1nkmM=
+
+Name: wjhk/jupload2/lang/test.back/lang_se.properties
+SHA1-Digest: 1iK/J7pJidofbEYiCFavwQofbLM=
+
+Name: wjhk/jupload2/gui/JUploadPanel.class
+SHA1-Digest: 5mBomeOVoK2DT6P2za7rn1O8d/E=
+
+Name: wjhk/jupload2/gui/filepanel/FilePanelJTable.class
+SHA1-Digest: wvNUuQH+YewlZVJf2des1DHMoXk=
+
+Name: wjhk/jupload2/lang/test.back/lang_zh_TW.properties
+SHA1-Digest: 50vOLmHzXdHhoh0s6hQ/ZAdxlsY=
+
+Name: wjhk/jupload2/gui/filepanel/SizeRenderer.class
+SHA1-Digest: HQeo/dAQzjcgx7cfFIE+a+buiU4=
+
+Name: wjhk/jupload2/policies/FilesTogetherUploadPolicy.class
+SHA1-Digest: 0Y21zrRAVsAdxpSvr8ZUDS9Fe+Q=
+
+Name: wjhk/jupload2/gui/image/PicturePanel.class
+SHA1-Digest: 27GOzH5Is4TybR5qa91fStZ5t2E=
+
+Name: wjhk/jupload2/exception/JUploadExceptionStopAddingFiles.class
+SHA1-Digest: CmQ7iwZEwdlxICmy7tLEHSCa3kw=
+
+Name: wjhk/jupload2/lang/lang_nl.properties
+SHA1-Digest: AkD37MkeJOhjgVKroO6twl3dRPo=
+
+Name: wjhk/jupload2/filedata/DefaultFileData.class
+SHA1-Digest: l6tUhr7NAuuDU/XmkkIenuQmTMk=
+
+Name: images/up.gif
+SHA1-Digest: 8a6rm8frIut78PKnPysCwz68Zr8=
+

@@ -1,0 +1,272 @@
+/* $Id: local-sample.css 6555 2010-02-24 20:21:15Z chris $ */
+
+/****************************/
+/* LOCAL CSS                */
+/****************************/
+
+/* Put your custom CSS and CSS overrides in this file and  */
+/* rename it local.css.  By restricting your CSS changes   */
+/* to local.css, your changes will not be overwritten when */
+/* upgrading to a new version of this theme.  You can also */
+/* use a local-rtl.css file for the equivalent in RTL.     */
+
+/* Steps to activate local.css:                       */
+/* 1. Add your custom CSS to this file                */
+/* 2. Rename this file to local.css                   */
+/* 3. Clear cached data at admin/settings/performance */
+
+
+
+#pid-home .panel-3col-33-stacked div.view-og-most-active
+{
+	
+	font-size:18px;
+	
+}
+
+#pid-home .panel-3col-33-stacked div.panel-panel.panel-col-last
+{
+	font-size:18px;
+
+	
+}
+
+#pid-home .panel-3col-33-stacked div.pane-content.content
+{
+	
+	font-size:18px;
+	
+}
+
+
+h2.pane-title.block-title
+{
+ 
+background-color: #737373;
+padding-bottom: 25px;
+font-size:18px;
+
+}
+
+
+
+
+div#logo
+{
+	padding-top:25px;
+}
+
+/* slogan*/
+
+#site-name-wrapper
+
+{
+	color:white;
+	font-family:cursive;
+	font-size:24px;
+	padding-top: 45px;
+	padding-left: 30px;
+}
+
+.node .inner ul.links .blog_usernames_blog
+{
+display:none;
+}
+
+.view-og-library-blog  .addnew
+
+{
+display:none;
+}
+
+.view-og-library-blog  .views-field-title
+{
+	font-size:18px;
+	font-weight:bold;
+	
+
+}
+
+
+.view-og-library-blog  .views-field-body
+{
+	font-size:14px;
+	
+}
+
+.view-og-library-blog  .views-field-name
+{
+	border-top: dotted 1px;
+	border-top-color: #156870;
+
+	
+}
+
+
+.view-og-library-blog  div.views-field-name-1
+{
+	border-bottom: dotted 1px;
+	border-bottom-color: #156870;
+
+}
+
+
+
+#pid-library-blog .twocol-70-30 h2.title.block-title
+{background-color:  #737373;
+padding-bottom: 25px;
+}
+
+
+.fusion-list-bottom-border .view-content div.views-row {
+	padding-bottom:100px;
+
+}
+
+#pid-library-blog .twocol-70-30  div.panel-pane.pane-custom.pane-1
+{
+
+line-height: 50%;}
+
+
+#pid-library-blog .twocol-70-30  div.panel-pane.pane-views.pane-og-upcoming-events 
+{
+
+border-top: dotted 1px black;
+
+}
+
+
+#pid-library-blog .twocol-70-30  div.panel-pane.pane-custom.pane-1 img
+{
+
+padding-right: 10px;}
+
+#pid-library-blog .twocol-70-30  div.panel-panel.panel-col-last
+{
+	pading-left:2px;
+	background-color:#dff6f8;
+}
+
+#pid-library-blog div.panel-pane.pane-views.pane-og-library-blog
+{
+	width:650px;
+	background-color: #d8d6d4;
+}
+
+div.field-label
+{
+	display:none;
+}
+
+div.header-group-inner
+{
+	background-image: url('');
+	background-repeat:no-repeat;
+	background-color: #156870;
+}
+
+div.header-group-wrapper.header-group-wrapper.full-width
+{
+	background-color: #156870;
+}
+
+
+li.blog_usernames_blog.first
+{display:none;}
+
+#pid-library-blog .twocol-70-30 div.field-item.odd
+{ border-top: thin dotted black;
+}
+
+
+body#pid-home div.panel-panel.panel-col-first
+
+{
+	font-size:16px;
+
+}
+
+body#pid-home div.panel-panel.panel-col-first a
+
+{
+	color: #156870;
+}
+
+body#pid-home div.panel-panel.panel-col-last
+
+{
+	font-size:16px;
+
+}
+
+body#pid-home div.panel-panel.panel-col-last a
+
+{
+	color: #156870;
+}
+
+
+body#pid-home div.pane-title.block-tit
+
+{
+	background-color:#A09B97;
+}
+
+
+
+ /* gallery homepage */
+ 
+ div.views-field-field-gallery-image-fid
+{
+	padding-right:40px;
+}
+
+
+/* class homepage   */
+
+#pid-group-class-1-202 div.panel-panel-panel-col-last
+
+{
+	background-color:pink; 
+}
+
+/* taxonomy term pages   */
+
+
+.view-taxonomy-term  li.blog_usernames_blog.first
+{
+	
+	visibility:hidden;
+}
+
+.view-taxonomy-term  a.active
+{
+	display:none;
+}
+	
+.view-taxonomy-term	.views-field-title
+{
+	font-size:18px;
+	font-weight:bold;
+	
+
+}
+
+.view-taxonomy-term .views-field-body
+
+{ 
+	font-size:14px;
+	
+}
+.view-taxonomy-term .views-row
+
+{border-bottom: dotted black 1px;
+}
+#pid-category-library-tags-websites div#main-content.main-content.row.nested
+{
+	background-color:#d8d6d4;
+	width: 775px;
+
+
+/* blog style*/

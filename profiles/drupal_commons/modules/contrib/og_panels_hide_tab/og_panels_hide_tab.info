@@ -1,0 +1,8 @@
+name =  OG Panels Hide tabs
+description = Module that hides OG Panels tabs
+package = Organic groups
+dependencies[] = og_panels
+version = "6.x-1.x"
+core = "6.x"
+project = og_panel_hide_tab
+

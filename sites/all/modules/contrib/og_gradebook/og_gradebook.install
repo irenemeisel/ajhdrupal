@@ -1,0 +1,49 @@
+<?php
+// $Id: og_gradebook.install,v 1.1.6.1 2009/01/24 03:49:04 mgn Exp $
+
+/**
+ * @file
+ * og_gradebook.install: Install schema for og_gradebook
+ */
+
+/**
+ * Implementation of hook_schema().
+ */
+
+function og_gradebook_schema() {
+  $schema['og_gradebook'] = array(
+    'fields' => array(
+      'tid'    => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0),
+      'nid'    => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0),
+    ),
+    'primary key' => array('nid', 'tid'),
+  );
+
+  return $schema;
+}
+
+/**
+ * Implementation of hook_install().
+ */
+
+function og_gradebook_install() {
+  // Create tables.
+  drupal_install_schema('og_gradebook');
+
+  // set og_gradebook weight
+  db_query("UPDATE {system} SET weight = %d WHERE name = '%s'", 2, 'og_gradebook');
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function og_gradebook_uninstall() {
+  // Remove group gradebooks
+  og_gradebook_apply_to_all('delete');
+
+  // Remove tables.
+  drupal_uninstall_schema('og_gradebook');
+
+  // Delete all variables.
+  db_query("DELETE FROM {variable} WHERE name LIKE 'og_gradebook_%%'");
+}

@@ -1,0 +1,14 @@
+name = Block reference
+description = Defines a field type for referencing a block from a node.
+dependencies[] = content
+dependencies[] = text
+dependencies[] = optionwidgets
+dependencies[] = block
+package = CCK
+core = 6.x
+; Information added by drupal.org packaging script on 2012-01-15
+version = "6.x-1.27"
+core = "6.x"
+project = "blockreference"
+datestamp = "1326619536"
+

@@ -1,0 +1,10 @@
+/* $Id: ie8-fixes.css,v 1.1 2009/11/23 15:59:59 atelier Exp $ */
+
+/* IE8 fixes
+-------------------------------------------------------------- */
+
+/* grid mask overlay opacity fix
+-------------------------------------------------------------- */
+#grid-mask-overlay {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+}
